@@ -22,5 +22,9 @@ namespace _9_GenericsIntro
             items[items.Length - 1] = item; //eleman sayısının -1 i son index i verir
         }
         public int Count { get { return items.Length; } }
+        public T[] Items
+        {
+            get { return items; }
+        }
     }
 }

@@ -11,6 +11,10 @@ namespace _9_GenericsIntro
             Console.WriteLine(isimler.Count);
             isimler.Add("Melek");
             Console.WriteLine(isimler.Count);
+            foreach (var item in isimler.Items)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
