@@ -19,7 +19,7 @@ namespace _11_Odev5_GameDemo
         private static void GameSaleOperations()
         {
             Console.WriteLine("----------------- Oyun Satışlar ------------------");
-            GameSaleService gameSaleService = new GameSaleService();
+            GameSaleManager gameSaleService = new GameSaleManager();
             Game game = new Game { Name = "Super Mario" };
             Customer customer = new Customer { FirstName = "Oyuncu 1" };
             Campaign campaign = new Campaign { Name = "%25 İndirim" };
@@ -37,7 +37,7 @@ namespace _11_Odev5_GameDemo
                 Discount = 90,
                 DeadLine = new DateTime(2021, 01, 27)
             };
-            CampaignService campaignService = new CampaignService();
+            CampaignManager campaignService = new CampaignManager();
             Console.WriteLine("--- Kampanya Ekleme ------------------");
             campaignService.Add(campaign);
             Console.WriteLine("--- Kampanya Güncelleme ------------------");
@@ -57,7 +57,7 @@ namespace _11_Odev5_GameDemo
                 LastName = "Karaca",
                 DateOfBirth = new DateTime(1988, 4, 23)
             };
-            CustomerManager customerManager = new CustomerManager();
+            CustomerManager customerManager = new CustomerManager(new CustomerCheckManager());
             Console.WriteLine("--- Oyuncu Ekleme ------------------");
             customerManager.Add(customer);
             Console.WriteLine("--- Oyuncu Güncelleme ------------------");

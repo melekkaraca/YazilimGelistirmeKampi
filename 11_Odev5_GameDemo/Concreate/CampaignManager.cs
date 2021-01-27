@@ -6,7 +6,7 @@ using System.Text;
 
 namespace _11_Odev5_GameDemo.Concreate
 {
-    public class CampaignService : ICampaignService
+    public class CampaignManager : ICampaignService
     {
         public void Add(Campaign campaign)
         {

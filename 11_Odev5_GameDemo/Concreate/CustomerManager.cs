@@ -7,13 +7,19 @@ using System.Text;
 
 namespace _11_Odev5_GameDemo.Concreate
 {
-    public class CustomerManager : ICustomerManager, ICustomerCheckService
+    public class CustomerManager : ICustomerManager
     {
-        
+        ICustomerCheckService _customerCheckService;
+
+        public CustomerManager(ICustomerCheckService customerCheckService)
+        {
+            _customerCheckService = customerCheckService;
+        }
+
         public void Add(Customer customer)
         {
             //Mernis Doğrulaması
-            if (CheckCustomer(customer))
+            if (_customerCheckService.CheckCustomer(customer))
             {
                 Console.WriteLine("Oyuncu eklendi: " + customer.FirstName);
             }
@@ -22,12 +28,6 @@ namespace _11_Odev5_GameDemo.Concreate
                 Console.WriteLine("Oyuncu eklenemedi: " + customer.FirstName);
             }
             
-        }
-
-        public bool CheckCustomer(Customer customer)
-        {
-            CustomerCheckService customerCheckService = new CustomerCheckService();
-            return customerCheckService.CheckCustomer(customer);
         }
 
         public void Delete(Customer customer)

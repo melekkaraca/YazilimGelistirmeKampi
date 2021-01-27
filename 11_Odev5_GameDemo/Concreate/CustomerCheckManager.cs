@@ -7,7 +7,7 @@ using System.Text;
 
 namespace _11_Odev5_GameDemo.Concreate
 {
-    public class CustomerCheckService : ICustomerCheckService
+    public class CustomerCheckManager : ICustomerCheckService
     {
         public bool CheckCustomer(Customer customer)
         {
