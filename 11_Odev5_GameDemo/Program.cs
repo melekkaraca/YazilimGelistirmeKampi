@@ -11,6 +11,44 @@ namespace _11_Odev5_GameDemo
         {
             GameList();
             CampaignList();
+            CustomerOperations();
+            CampaignOperations();
+            GameSaleOperations();
+        }
+
+        private static void GameSaleOperations()
+        {
+            Console.WriteLine("----------------- Oyun Satışlar ------------------");
+            GameSaleService gameSaleService = new GameSaleService();
+            Game game = new Game { Name = "Super Mario" };
+            Customer customer = new Customer { FirstName = "Oyuncu 1" };
+            Campaign campaign = new Campaign { Name = "%25 İndirim" };
+            gameSaleService.Sale(game, customer);
+            gameSaleService.SaleOfCampaign(game, customer, campaign);
+        }
+
+        private static void CampaignOperations()
+        {
+            Console.WriteLine("----------------- Kapmanya İşlemleri ------------------");
+            Campaign campaign = new Campaign()
+            {
+                Id = 1,
+                Name = "%90 İndirim",
+                Discount = 90,
+                DeadLine = new DateTime(2021, 01, 27)
+            };
+            CampaignService campaignService = new CampaignService();
+            Console.WriteLine("--- Kampanya Ekleme ------------------");
+            campaignService.Add(campaign);
+            Console.WriteLine("--- Kampanya Güncelleme ------------------");
+            campaignService.Update(campaign);
+            Console.WriteLine("--- Kampanya Silme ------------------");
+            campaignService.Delete(campaign);
+        }
+
+        private static void CustomerOperations()
+        {
+            Console.WriteLine("----------------- Oyuncu İşlemleri ------------------");
             Customer customer = new Customer()
             {
                 Id = 1,
@@ -20,22 +58,21 @@ namespace _11_Odev5_GameDemo
                 DateOfBirth = new DateTime(1988, 4, 23)
             };
             CustomerManager customerManager = new CustomerManager();
-            Console.WriteLine("----------------- Oyuncu Ekleme ------------------");
+            Console.WriteLine("--- Oyuncu Ekleme ------------------");
             customerManager.Add(customer);
-            Console.WriteLine("----------------- Oyuncu Güncelleme ------------------");
-            customerManager.Uptate(customer);
-            Console.WriteLine("----------------- Oyuncu Silme ------------------");
+            Console.WriteLine("--- Oyuncu Güncelleme ------------------");
+            customerManager.Update(customer);
+            Console.WriteLine("--- Oyuncu Silme ------------------");
             customerManager.Delete(customer);
-
         }
 
         private static void CampaignList()
         {
             List<Campaign> campaigns = new List<Campaign>
             {
-                new Campaign { Id = 1, Name = "%25 Discount", DeadLine = new DateTime(2021, 2, 28), Discount = 25 },
-                new Campaign { Id = 2, Name = "%5 Discount", DeadLine = new DateTime(2021, 2, 15), Discount = 5 },
-                new Campaign { Id = 3, Name = "%50 Discount", DeadLine = new DateTime(2021, 1, 29), Discount = 50 }
+                new Campaign { Id = 1, Name = "%25 İndirim", DeadLine = new DateTime(2021, 2, 28), Discount = 25 },
+                new Campaign { Id = 2, Name = "%5 İndirim", DeadLine = new DateTime(2021, 2, 15), Discount = 5 },
+                new Campaign { Id = 3, Name = "%50 İndirim", DeadLine = new DateTime(2021, 1, 29), Discount = 50 }
             };
             Console.WriteLine("----------------- Kampanyalar ------------------");
             foreach (var campaign in campaigns)

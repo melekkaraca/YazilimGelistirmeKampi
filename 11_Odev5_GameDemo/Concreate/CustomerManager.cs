@@ -35,7 +35,7 @@ namespace _11_Odev5_GameDemo.Concreate
             Console.WriteLine("Oyuncu güncellendi: " + customer.FirstName);
         }
 
-        public void Uptate(Customer customer)
+        public void Update(Customer customer)
         {
             Console.WriteLine("Oyuncu silindi: " + customer.FirstName);
         }

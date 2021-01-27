@@ -5,10 +5,10 @@ using System.Text;
 
 namespace _11_Odev5_GameDemo.Abstract
 {
-    public interface ICustomerManager
+    public interface ICampaignService
     {
-        void Add(Customer customer);
-        void Update(Customer customer);
-        void Delete(Customer customer);
+        void Add(Campaign campaign);
+        void Update(Campaign campaign);
+        void Delete(Campaign campaign);
     }
 }
