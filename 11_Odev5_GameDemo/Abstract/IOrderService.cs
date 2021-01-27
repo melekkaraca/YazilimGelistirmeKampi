@@ -5,7 +5,7 @@ using System.Text;
 
 namespace _11_Odev5_GameDemo.Abstract
 {
-    public interface IGameSaleService
+    public interface IOrderService
     {
         void Sale(Game game, Customer customer);
         void SaleOfCampaign(Game game, Customer customer, Campaign campaign);

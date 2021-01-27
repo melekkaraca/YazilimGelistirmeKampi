@@ -6,7 +6,7 @@ using System.Text;
 
 namespace _11_Odev5_GameDemo.Concreate
 {
-    public class GameSaleManager : IGameSaleService
+    public class OrderManager : IOrderService
     {
         public void Sale(Game game, Customer customer)
         {

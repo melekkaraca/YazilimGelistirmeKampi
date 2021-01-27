@@ -13,18 +13,18 @@ namespace _11_Odev5_GameDemo
             CampaignList();
             CustomerOperations();
             CampaignOperations();
-            GameSaleOperations();
+            OrderOperations();
         }
 
-        private static void GameSaleOperations()
+        private static void OrderOperations()
         {
             Console.WriteLine("----------------- Oyun Satışlar ------------------");
-            GameSaleManager gameSaleService = new GameSaleManager();
+            OrderManager orderService = new OrderManager();
             Game game = new Game { Name = "Super Mario" };
             Customer customer = new Customer { FirstName = "Oyuncu 1" };
             Campaign campaign = new Campaign { Name = "%25 İndirim" };
-            gameSaleService.Sale(game, customer);
-            gameSaleService.SaleOfCampaign(game, customer, campaign);
+            orderService.Sale(game, customer);
+            orderService.SaleOfCampaign(game, customer, campaign);
         }
 
         private static void CampaignOperations()
